@@ -7,8 +7,10 @@ import { collection, getDocs } from "firebase/firestore"
 
 
 export default async function Dashboard() {
-  const {userId,} = auth()
-  const docsResults = await getDocs(collection(db, "users",userId!, "files"))
+  const {userId,} = auth();
+
+  const docsResults = await getDocs(collection(db, "users",userId!, "files"));
+
   const skeletonFiles:FileType[] = docsResults.docs.map(doc =>({
     id: doc.id,
     filename: doc.data().filename || doc.id,
@@ -24,6 +26,7 @@ export default async function Dashboard() {
   return (
     <div className="border-t">
      <Dropzone />
+     
      <section className="container space-y-5">
       <h2 className="font-bold">All Files</h2>
       <div>
