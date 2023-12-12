@@ -11,8 +11,8 @@ import {
 import { db, storage } from "@/firebase";
 import { useAppStore } from "@/store/store";
 import { useUser } from "@clerk/nextjs";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
-import { deleteObject, ref } from "firebase/storage";
+import {  doc, updateDoc } from "firebase/firestore";
+
 import { useState } from "react";
 
 import toast from "react-hot-toast";
